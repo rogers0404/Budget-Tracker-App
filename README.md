@@ -79,7 +79,7 @@ Express.js Dependency is licensed under the
 
 mongoose Dependency is licensed under the
 
-Copyright (c) 2010 LearnBoost ![dev@learnboost.com](dev@learnboost.com)
+Copyright (c) 2010 LearnBoost [dev@learnboost.com](dev@learnboost.com)
 
 ## Test
 
