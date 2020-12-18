@@ -18,7 +18,8 @@ app.use(express.static("public"));
 
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
-  useFindAndModify: false
+  useFindAndModify: false,
+  useUnifiedTopology: true    //Add property useUnifiedTopology to get of rid deprecation in the server. 
 });
 
 // routes
