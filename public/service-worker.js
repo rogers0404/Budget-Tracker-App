@@ -1,7 +1,7 @@
 //Uncomment the lines below to set up the cache files
 
 const CACHE_NAME = 'Budget Tracker App';
-const DATA_CACHE_NAME = 'budget-tracker-cache-v1.1';
+const DATA_CACHE_NAME = 'budget-tracker-cache-v1';
 
 const FILES_TO_CACHE = [
   '/',

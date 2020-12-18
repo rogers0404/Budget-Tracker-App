@@ -1,13 +1,13 @@
 // create variable for db connection
 let db;
-// establish a connection to IndexedDB database called 'pizza_hunt' and set it to version 1
+// establish a connection to IndexedDB database and set it to version 1
 const request = indexedDB.open('budget', 1);
 
 // this event will emit if the database version changes (nonexistant to version 1, v1 to v2, etc.)
 request.onupgradeneeded = function(event) {
     // save a reference to the database 
     const db = event.target.result;
-    // create an object store (table) called `new_pizza`, set it to have an auto incrementing primary key of sorts 
+    // create an object store (table), set it to have an auto incrementing primary key of sorts 
     db.createObjectStore('transaction', { autoIncrement: true });
   };
 
@@ -28,12 +28,12 @@ request.onsuccess = function(event) {
     console.log(event.target.errorCode);
   };
 
-  // This function will be executed if we attempt to submit a new pizza and there's no internet connection
+  // This function will be executed if we attempt to submit a transaction budget and there's no internet connection
 function saveRecord(record) {
     // open a new transaction with the database with read and write permissions 
     const transaction = db.transaction(['transaction'], 'readwrite');
   
-    // access the object store for `new_pizza`
+    // access the object store with the name `transaction`
     const transactionObjectStore = transaction.objectStore('transaction');
   
     // add record to your store with add method
@@ -69,7 +69,7 @@ getAll.onsuccess = function() {
           }
           // open one more transaction
           const transaction = db.transaction(['transaction'], 'readwrite');
-          // access the new_pizza object store
+          // access the transaction object store
           const transactionObjectStore = transaction.objectStore('transaction');
           // clear all items in your store
           transactionObjectStore.clear();
